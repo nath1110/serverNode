@@ -1,0 +1,1 @@
+VAR algo string; if(algo <=10){ algo * algo; } while(true){ asdad } for(sasxzxc){ }
