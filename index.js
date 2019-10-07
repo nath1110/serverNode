@@ -23,4 +23,6 @@ app.post("/", (req,res,next)=>{
 
 });
 
-
+app.listen(5000,()=>{
+    console.log('Eschucha el server');
+});
