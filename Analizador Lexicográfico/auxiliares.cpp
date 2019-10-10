@@ -4,7 +4,9 @@
 #include "pl0.h"
 #include "auxiliares.h"
 #include "lexico.h"
-
+#include <fstream>
+#include <iostream>
+using namespace std;
 //error: por el momento todo error es fatal          
  int error(int no)
 { 
@@ -43,5 +45,8 @@ void imprime_token()
 
 const char* token_string[]={"nulo","ident","numero","mas","menos","por","barra","igl","nig","mnr","mei","myr","mai","parena","parenc","coma","puntoycoma","llaveI","llaveDe","masmas","menosmenos","modulo","corcheI","corcheDe","comilla","punto","asignacion","inttoken","floattoken","chartoken","booleantoken","stringtoken","arraytoken","vartoken","iftoken","elsetoken","elseiftoken","functiontoken","openfiletoken","readfiletoken","closefiletoken","truetoken","falsetoken","readtoken","printtoken","returntoken","fortoken","whiletoken"};
  printf("(%s) \n",token_string[token]);
+ ofstream fs("algo.txt", ios::app);
+ fs<<token_string[token]<<endl;
+ fs.close();
   
 }

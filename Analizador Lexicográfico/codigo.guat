@@ -1,0 +1,7 @@
+var x string ;;
+x = " algo " ;
+if(x != " algo "){
+}
+for(i int = 0 ; i < 10; i ++){
+print ( i );
+}

@@ -4,21 +4,28 @@ const app =express();
 var exec= require('child_process').exec,child;
 const fs = require("fs");
 
-var fs = require('fs');
+
  
 
 
 
-app.post("/", (req,res,next)=>{
+app.post('/', (req,res,next)=>{
     const content = req.body.content;
-    fs.writeFile('Analizador Lexicográfico/prueba.guat', content, (error) =>{
+    fs.writeFile('Analizador Lexicográfico/codigo.guat',content, (error) =>{
         console.log(error);
         child=exec('./Analizador Lexicográfico/compile.sh', (error,stdout,stder)=>{
             return res.status(200).json({
-                ok: true,
-                returnedCode:stdout,
+                ok: true
             });
         });
+    });
+    
+    fs.readFile('Analizador Lexicográfico/algo.txt','utf8', (err, data) => {
+        if (err) {
+            console.error(err)
+            return
+        }
+        console.log(data);
     });
 
 });
